@@ -39,19 +39,15 @@ logger = logging.getLogger("flask.app")
 # Create the SQLAlchemy object to be initialized later in init_db()
 db = SQLAlchemy()
 
-
 def init_db(app):
     """Initialize the SQLAlchemy app"""
     Product.init_db(app)
 
-
 class DataValidationError(Exception):
     """Used for an data validation errors when deserializing"""
 
-
 class Category(Enum):
     """Enumeration of valid Product Categories"""
-
     UNKNOWN = 0
     CLOTHS = 1
     FOOD = 2
@@ -59,11 +55,9 @@ class Category(Enum):
     AUTOMOTIVE = 4
     TOOLS = 5
 
-
 class Product(db.Model):
     """
     Class that represents a Product
-
     This version uses a relational database for persistence which is hidden
     from us by SQLAlchemy's object relational mappings (ORM)
     """
